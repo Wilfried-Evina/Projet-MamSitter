@@ -1,20 +1,21 @@
-import Hero from './components/Hero';
-import Services from './components/Services';
-import HowItWorks from './components/HowItWorks';
-import Testimonials from './components/Testimonials';
-import BecomeSitter from './components/BecomeSitter';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import { Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import ProfileMamaSitter from "./pages/ProfileMamaSitter";
+import Messaging from "./pages/Messaging";
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <Hero />
-      <Services />
-      <HowItWorks />
-      <Testimonials />
-      <BecomeSitter />
+      <main className="pt-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profil-mamasitter" element={<ProfileMamaSitter />} />
+          <Route path="/messagerie" element={<Messaging />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );
